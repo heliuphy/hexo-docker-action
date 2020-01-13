@@ -1,5 +1,8 @@
-#!/bin/sh -l
+#!/bin/sh
 
-echo "Hello $1"
-time=$(date)
-echo ::set-output name=time::$time
+set -e
+
+git config --global user.name "$NAME"
+git config --global user.email "$EMAIL"
+
+sh -c "hexo $*"
